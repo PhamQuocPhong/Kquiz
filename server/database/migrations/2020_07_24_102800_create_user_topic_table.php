@@ -16,9 +16,9 @@ class CreateUserTopicTable extends Migration
         Schema::create('user_topics', function (Blueprint $table) {
             $table->increments('id');
             $table->float('point');
-            $table->float('correct_answers');
-            $table->date('date');
-            $table->time('time');
+            $table->integer('correct_answers');
+
+            $table->integer('user_id');
 
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateUserTopicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_topic');
+        Schema::dropIfExists('user_topics');
     }
 }

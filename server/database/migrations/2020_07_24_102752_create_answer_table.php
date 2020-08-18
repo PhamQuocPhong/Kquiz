@@ -16,7 +16,7 @@ class CreateAnswerTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('correct');
+            $table->boolean('is_correct');
 
             $table->integer('question_id');
             
@@ -32,6 +32,6 @@ class CreateAnswerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('answer');
+        Schema::dropIfExists('answers');
     }
 }
