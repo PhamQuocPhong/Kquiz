@@ -4,27 +4,31 @@ import { User, Question } from './types'
 
 
 @Module({
-  name: 'user',
+  name: 'users',
   stateFactory: true,
   namespaced: true,
 })
 
 export default class UserModule extends VuexModule {
   users: User[] = []
-  userDisabled: User = {}
+  userDisabled: User[] = []
 
   @Mutation
   setUsers(users: User[]) {
     this.users = users
-    this.userDisabled = {
-      name: "Phong dep trai",
-      password: "fsagsagsa"
-    }
+    this.userDisabled = [
+      {
+        name: "Phong dep trai",
+        password: "fsagsagsa"
+      }
+    ]
   }
 
+  // action
   @Action({ rawError: true })
   async getUsers() {
     const res = await $axios.$get('/subjects')
+
     this.setUsers([
       {
         name: 'fasfasgsa',
@@ -33,6 +37,7 @@ export default class UserModule extends VuexModule {
     ])
   }  
 
+  // getter 
   get allUsers(){
     return this.users
   }

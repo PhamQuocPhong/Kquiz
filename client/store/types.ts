@@ -1,8 +1,13 @@
-export interface User{
+export interface User {
 	name?: string,
 	password?: string,
 }
 
-export interface Question{
+export interface Question {
 	name?: string
+}
+
+export interface Subject{
+	name?: string,
+	description?: string
 }
