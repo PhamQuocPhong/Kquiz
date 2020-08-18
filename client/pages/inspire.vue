@@ -25,6 +25,7 @@ import { mapGetters,  mapActions} from 'vuex'
 
 export default {
 
+
   data(){
     return {
       data: 'Hello'
@@ -32,7 +33,7 @@ export default {
   },
 
   created(){
-      this.$store.dispatch('user/getUsers')
+      this.$store.dispatch('users/getUsers')
   },
 
   mounted(){
@@ -47,7 +48,7 @@ export default {
   computed: {
 
     getAllUsers(){
-      return this.$store.getters['user/allUsers']
+      return this.$store.getters['users/allUsers']
     }
 
   }
