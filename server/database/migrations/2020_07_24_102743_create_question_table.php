@@ -17,7 +17,6 @@ class CreateQuestionTable extends Migration
             $table->increments('id');
             $table->string('title', 255);
             $table->boolean('used_flg')->default(false);
-            $table->string('image')->nullable();
             
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
@@ -31,6 +30,6 @@ class CreateQuestionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question');
+        Schema::dropIfExists('questions');
     }
 }

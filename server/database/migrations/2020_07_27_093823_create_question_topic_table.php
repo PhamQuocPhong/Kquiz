@@ -31,6 +31,6 @@ class CreateQuestionTopicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_topic');
+        Schema::dropIfExists('question_topics');
     }
 }

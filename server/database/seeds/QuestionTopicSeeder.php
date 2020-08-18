@@ -11,10 +11,27 @@ class QuestionTopicSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        // QuestionTopic::create([
-        // 	'topic_id' => 
-        // ]);
-    }
+    // public function run()
+    // {   
+    //     $this->truncateQuestionTopics();
+    //     $faker = Faker::create();
+
+    //     foreach (range(1, 50) as $i) {
+    //         DB::table('question_topics')->insert([
+    //             [
+    //                 'topic_id' => $i,
+    //                 'question_id' => $i * ,
+    //                 'user_create' => 1
+    //             ]
+    //         ]);
+    //     }
+    // }
+
+
+    // public function truncateQuestionTopics()
+    // {
+    //     Schema::disableForeignKeyConstraints();
+    //     DB::table('question_topics')->truncate();
+    //     Schema::enableForeignKeyConstraints();
+    // }
 }

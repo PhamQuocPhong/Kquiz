@@ -16,8 +16,7 @@ class CreateTopicTable extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 50);
-            $table->boolean('publish_flg');
-
+            $table->boolean('publish_flg')->default(false);
             $table->integer('subject_id');
 
             $table->timestamps();
@@ -31,6 +30,6 @@ class CreateTopicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topic');
+        Schema::dropIfExists('topics');
     }
 }
